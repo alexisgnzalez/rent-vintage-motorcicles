@@ -2,4 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'offers#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :offers do
+    resources :bookings, only: %i[new create]
+  end
+  resources :bookings, only: %i[destroy]
 end
