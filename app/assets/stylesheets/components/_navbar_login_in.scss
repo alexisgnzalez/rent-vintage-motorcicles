@@ -1,12 +1,17 @@
-.navbar-lewagon {
+.navbar-login {
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(302deg,#9d00ff,#cf357e 50%,#ff8d10);
+  color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-login .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-login .navbar-brand img {
   width: 40px;
+}
+
+.navbar-login  .nav-link {
+color: light;
 }
