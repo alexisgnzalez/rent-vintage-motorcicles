@@ -1,1 +1,10 @@
-<h1>this is the index page</h1>
+<h1>Available Motorcicles</h1>
+<ul>
+  <% @offers.each do |offer| %>
+    <li><%= offer.description %> <%= link_to 'Details', offer_path(offer) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', root_path %>
+
+<%= link_to 'Add', new_offer_path %>
