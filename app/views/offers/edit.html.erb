@@ -1,11 +1,15 @@
-<h1>Edit this motorcycle: <%= @offer.description %> </h1>
-
-<%= simple_form_for(@offer) do |f| %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :lat %>
-  <%= f.input :long %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'Back', offer_path(@offer) %>
+<div class="container">
+  <h1 class="row justify-content-center pt-1 title">Edit this motorcycle: <%= @offer.description %> </h1>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 bg-white form">
+      <%= simple_form_for(@offer) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :lat %>
+        <%= f.input :long %>
+        <%= f.button :submit, class: "btn btn-outline-success" %>
+        <%= link_to 'Back', offer_path(@offer), class: "btn btn-outline-secondary ml-20" %>
+      <% end %>
+    </div>
+  </div>
+</div>
