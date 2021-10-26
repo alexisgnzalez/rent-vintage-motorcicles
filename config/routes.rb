@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  # Users routes
   devise_for :users
-  root to: 'offers#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  # Route to the homepage
+  root to: 'offers#home'
+
+  # The rest of the routes
   resources :offers do
     resources :bookings, only: %i[new create]
   end
