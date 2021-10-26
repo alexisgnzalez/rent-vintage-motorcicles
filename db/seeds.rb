@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+require 'json'
+
+puts "Cleaning up database..."
+Offer.destroy_all
+# Review.destroy_all
+# List.destroy_all
+# Movie.destroy_all
+puts "Database cleaned"
+
+10.times do |i|
+  puts "creating motorcicle with faker #{i + 1}"
+  Offer.create(
+    description: "#{Faker::Vehicle.make_and_model} #{Faker::Vehicle.color}",
+    price: rand(5..15),
+    lat: 10.501592,
+    long: -66.910912,
+    user_id: 1
+  )
+end
+puts "Offers created"
