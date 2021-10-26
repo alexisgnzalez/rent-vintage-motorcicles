@@ -18,6 +18,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.user = current_user
     @offer.save
 
     # no need for app/views/offers/create.html.erb
