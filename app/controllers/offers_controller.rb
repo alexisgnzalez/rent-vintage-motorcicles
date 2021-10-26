@@ -1,6 +1,11 @@
 class OffersController < ApplicationController
   # line below will call #set_offer method before specified actions
+  skip_before_action :authenticate_user!, only: %i[home index]
   before_action :set_offer, only: %i[show edit update destroy]
+
+  def garage
+    @garage = current_user.offers
+  end
 
   def home
   end
@@ -19,10 +24,15 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
-    @offer.save
+
+    if @offer.save
+      # redirect_to restaurant_path(@restaurant)
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
 
     # no need for app/views/offers/create.html.erb
-    redirect_to offer_path(@offer)
   end
 
   def edit

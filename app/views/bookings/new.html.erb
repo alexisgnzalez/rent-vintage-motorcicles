@@ -1,0 +1,10 @@
+<h1>Book this Motorcycle: <%= @offer.description %></h1>
+<%= link_to 'Motorcycle Details', offer_path(@offer) %>
+
+<%= simple_form_for [@offer, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'More Motorcycles', offers_path %>
