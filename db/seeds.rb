@@ -17,14 +17,15 @@ Offer.destroy_all
 # Movie.destroy_all
 puts "Database cleaned"
 
+good_user = User.first
+
 10.times do |i|
   puts "creating motorcicle with faker #{i + 1}"
-  Offer.create(
+  good_user.offers.create(
     description: "#{Faker::Vehicle.make_and_model} #{Faker::Vehicle.color}",
     price: rand(5..15),
     lat: 10.501592,
-    long: -66.910912,
-    user_id: 1
+    long: -66.910912
   )
 end
 puts "Offers created"
