@@ -47,7 +47,6 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-
     # no need for app/views/offers/destroy.html.erb
     redirect_to offers_path
   end
