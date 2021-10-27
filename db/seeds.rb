@@ -10,6 +10,7 @@ require 'open-uri'
 require 'json'
 
 puts "Cleaning up database..."
+Booking.destroy_all
 Offer.destroy_all
 # Review.destroy_all
 # List.destroy_all
