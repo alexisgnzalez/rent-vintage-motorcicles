@@ -1,12 +1,20 @@
 .navbar {
   justify-content: space-between;
-  background: white;
+  background: #69DADB;
   height: 60px;
   display: flex;
   position: sticky;
+  opacity: 0.1px;
 
   .navbar-collapse {
     flex-grow: 0;
+    font-family: $source-code;
+
+
+    &:hover {
+      color: grey;
+      border-radius: 29px;
+    }
   }
 
   .navbar-brand img {
@@ -14,7 +22,19 @@
   }
 
   .fa-motorcycle {
-    color:#1EDD88;
-    font-size: 25px;
+    color: #113CFC;
+    font-size: 35px;
+    margin: 0px;
+    width: 30px;
+  }
+
+  .fa-smog {
+    color:#113CFC;
+    font-size: 23px;
+    margin: 0px;
+  }
+
+  .nav-item {
+    color:#113CFC;
   }
 }
