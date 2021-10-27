@@ -3,6 +3,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    .card {
+      &:hover {
+        background-color: lightgray;
+        transform: scale(0.9,0.75);
+      }
+    }
 }
 
 @media(max-width: 992px) {
