@@ -1,12 +1,23 @@
-<h1>The Motorcycles I Want to Use</h1>
-<% if @bookeds.empty? %>
-  <h3>Looks like you don't any booked motorcycles buddy!</h3>
-<% else %>
-  <ul>
-    <% @bookeds.each do |booked| %>
-      <li><%= booked.offer.description %> <%= booked.start_date %> <%= booked.end_date %><%= link_to 'Details', offer_path(booked.offer) %></li>
+<div class="container ">
+  <div class="row justify-content-around mt-3">
+    <%= link_to 'All Motorcycles', offers_path, class: "btn btn-outline-dark" %>
+  </div>
+  <h1 class="text-center mt-3 font-weight-bold">The Motorcycles I Want to Use</h1>
+  <div class="cards">
+    <% if @bookeds.empty? %>
+      <h3>Looks like you don't any booked motorcycles buddy!</h3>
+    <% else %>
+      <% @bookeds.each do |booked| %>
+        <div class="card mb-3">
+          <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-text"><%= booked.offer.description %></h5>
+            <h5 class="card-text"><%= booked.start_date %></h5>
+            <h5 class="card-text"><%= booked.end_date %></h5>
+            <p class="card-text"><%= link_to 'Details', offer_path(booked.offer), class: "btn btn-outline-primary mt-1"%></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
-<% end %>
-
-<%= link_to 'All Motorcycles', offers_path %>
+  </div>
+</div>
