@@ -39,10 +39,10 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.update(offer_params)
+    authorize @offer
 
     # no need for app/views/offers/update.html.erb
-    if @offer.save
+    if @offer.update(offer_params)
       redirect_to offer_path(@offer)
     else
       render :edit
@@ -50,8 +50,8 @@ class OffersController < ApplicationController
   end
 
   def destroy
+    authorize @offer
     @offer.destroy
-
     # no need for app/views/offers/destroy.html.erb
     redirect_to offers_path
   end

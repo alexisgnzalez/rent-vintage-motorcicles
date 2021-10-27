@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   # end
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^offers$)/
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^offers$)|(^bookings$)/
     # devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^bookings$)/
     # Doubts with that regex expression, what does it mean pages?
   end
