@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.offer = Offer.find(params[:offer_id])
     @booking.user = current_user
+    # authorize @booking
 
     if @booking.save
       redirect_to booked_path
