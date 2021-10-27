@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="row justify-content-center pt-1 title">Edit this motorcycle: <%= @offer.description %> </h1>
   <div class="row justify-content-center">
     <div class="col-12 col-sm-6 bg-white form">
+      <h1 class="row justify-content-center pt-1 title">Edit this motorcycle: <%= @offer.description %> </h1>
       <%= simple_form_for(@offer) do |f| %>
         <%= f.input :description %>
         <%= f.input :price %>
@@ -10,6 +10,5 @@
         <%= f.button :submit, class: "btn btn-outline-success rounded-pill" %>
         <%= link_to 'Back', offer_path(@offer), class: "btn btn-outline-secondary ml-20 rounded-pill" %>
       <% end %>
-    </div>
   </div>
 </div>

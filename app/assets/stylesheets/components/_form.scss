@@ -1,18 +1,21 @@
 .title {
   color: #050505;
-  font-family: Extra-light 200;
+  font-family: $regular;
+  margin: 20px;
+
 }
 
 .form {
-  height: 10px;
-  padding-bottom: 425px;
+  padding-bottom: 40px;
   border-radius: 20px;
-  box-shadow: 6px 6px 7px grey;
-
+  box-shadow: 1px 1px 3px grey;
+  margin: 20px;
+  font-family: $source-code;
 }
 
 .form-control.is-valid {
   border-radius: 29px;
+
 }
 .form-control {
   border-radius: 29px;
