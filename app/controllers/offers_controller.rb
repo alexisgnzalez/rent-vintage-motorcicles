@@ -1,42 +1,57 @@
 class OffersController < ApplicationController
   # line below will call #set_offer method before specified actions
+  skip_before_action :authenticate_user!, only: %i[home index]
   before_action :set_offer, only: %i[show edit update destroy]
+
+  def garage
+    @garage = current_user.offers
+  end
 
   def home
   end
 
   def index
-    @offers = Offer.all
+    # @offers = Offer.all
+    @offers = policy_scope(Offer)
   end
 
   def show
   end
 
   def new
-    @offer = Offer.new # needed to instantiate the form_for
+    @offer = current_user.offers.new # needed to instantiate the form_for
+    authorize @offer
   end
 
   def create
-    @offer = Offer.new(offer_params)
-    @offer.save
+    @offer = current_user.offers.new(offer_params)
+    authorize @offer
 
-    # no need for app/views/offers/create.html.erb
-    redirect_to offer_path(@offer)
+    if @offer.save
+      # redirect_to restaurant_path(@restaurant)
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @offer.update(offer_params)
+    authorize @offer
 
     # no need for app/views/offers/update.html.erb
-    redirect_to offer_path(@offer)
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    authorize @offer
     @offer.destroy
-
     # no need for app/views/offers/destroy.html.erb
     redirect_to offers_path
   end
@@ -49,5 +64,6 @@ class OffersController < ApplicationController
 
   def set_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 end

@@ -1,12 +1,20 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: white;
-}
+  height: 60px;
+  display: flex;
+  position: sticky;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .navbar-collapse {
+    flex-grow: 0;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .navbar-brand img {
+    width: 40px;
+  }
+
+  .fa-motorcycle {
+    color:#1EDD88;
+    font-size: 25px;
+  }
 }

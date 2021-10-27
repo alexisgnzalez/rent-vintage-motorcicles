@@ -1,0 +1,22 @@
+<div class="container ">
+  <div class="row justify-content-around mt-3">
+    <%= link_to 'All Motorcycles', offers_path, class: "btn btn-outline-dark" %>
+    <%= link_to 'Add', new_offer_path, class: "btn btn-outline-success" %>
+  </div>
+  <h1 class="text-center mt-3 font-weight-bold">My Motorcicles</h1>
+  <div class="cards">
+    <% if @garage.empty? %>
+      <h3>Looks like you don't any motorcycles buddy!</h3>
+    <% else %>
+      <% @garage.each do |motorcycle| %>
+        <div class="card mb-3">
+          <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-text"><%= motorcycle.description %></h5>
+            <p class="card-text"><%= link_to 'Details', offer_path(motorcycle), class: "btn btn-outline-primary mt-1"%></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
