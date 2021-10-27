@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new # needed to instantiate the form_for
     @offer = Offer.find(params[:offer_id])
+
   end
 
   def create
@@ -18,16 +19,12 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      # redirect_to restaurant_path(@restaurant)
-      # redirect_to offer_path(@offer)
-      redirect_to offers_path # Just meanwhile
+      redirect_to booked_path
     else
+      @offer = Offer.find(params[:offer_id])
       render :new
       # redirect_to new_offer_booking_path(@booking.offer.id)
     end
-
-    # no need for app/views/offers/create.html.erb
-    # redirect_to booking_path(@booking)
   end
 
   # def edit
