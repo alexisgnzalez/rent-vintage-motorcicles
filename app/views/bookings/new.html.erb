@@ -1,10 +1,16 @@
-<h1>Book this Motorcycle: <%= @offer.description %></h1>
-<%= link_to 'Motorcycle Details', offer_path(@offer) %>
-
-<%= simple_form_for [@offer, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'More Motorcycles', offers_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 bg-white form">
+      <h1 class="row justify-content-center pt-1 title">Book this Motorcycle: <%= @offer.description %></h1>
+        <%= simple_form_for [@offer, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <div>
+          <%= f.button :submit, class: "btn btn-outline-success rounded-pill" %>
+          <%= link_to 'Motorcycle Details', offer_path(@offer), class: "btn btn-outline-secondary rounded-pill" %>
+          <%= link_to 'More Motorcycles', offers_path, class: "btn btn-outline-primary rounded-pill mt-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

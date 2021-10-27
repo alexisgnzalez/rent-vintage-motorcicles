@@ -1,11 +1,15 @@
-<h1>Add a New Motorcycle</h1>
-
-<%= simple_form_for(@offer) do |f| %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :lat %>
-  <%= f.input :long %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'Back', offers_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 bg-white form">
+      <h1 class="row justify-content-center pt-1 title">Add a New Motorcycle</h1>
+        <%= simple_form_for(@offer) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :lat %>
+          <%= f.input :long %>
+          <%= f.button :submit, class: "btn btn-outline-success rounded-pill" %>
+          <%= link_to 'Back', offers_path, class: "btn btn-outline-secondary ml-20 rounded-pill" %>
+      <% end %>
+    </div>
+  </div>
+</div>
