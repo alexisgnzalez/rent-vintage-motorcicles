@@ -2,9 +2,14 @@
   <div class="row justify-content-around mt-3 mb-3">
     <%= link_to 'Back', offers_path, class: "btn btn-outline-secondary" %>
     <%= link_to 'Book', new_offer_booking_path(@offer),class: "btn btn-outline-primary" %>
-    <%= link_to 'Edit', edit_offer_path(@offer), class: "btn btn-outline-success" %>
-    <%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-outline-danger" %>
+    <% if policy(@offer).edit? %>
+      <%= link_to 'Edit', edit_offer_path(@offer), class: "btn btn-outline-success" %>
+    <% end %>
+    <% if policy(@offer).destroy?%>
+      <%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-outline-danger" %>
+    <% end %>
   </div>
+
   <h1 class="text-center mt-1 mb-1">Your Dream Bike</h1>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -63,5 +68,4 @@
       <!-- <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoiam9pYW4iLCJhIjoiY2t1aXFoaXMyMnFldTJxbWFtazEyNWhkMSJ9.CZAdLywF2-1iSKGT3nsspA'> -->
     </div>
   </div><!--container -->
-
 </div>

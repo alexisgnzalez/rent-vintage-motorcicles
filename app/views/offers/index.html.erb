@@ -1,9 +1,13 @@
 <div class="container ">
   <div class="row justify-content-around mt-3">
     <%= link_to 'Back', root_path, class: "btn btn-outline-secondary" %>
-    <%= link_to 'New Motorcycle', new_offer_path, class: "btn btn-outline-success" %>
+    <!-- <% if policy(Offer).create? %> -->
+      <%= link_to 'New Motorcycle', new_offer_path, class: "btn btn-outline-success" %>
+    <!-- <% end %> -->
   </div>
+
   <h1 class="text-center mt-3 font-weight-bold">Available Motorcicles</h1>
+  
   <div class="cards">
     <% @offers.each do |offer| %>
       <div class="card mb-3">
