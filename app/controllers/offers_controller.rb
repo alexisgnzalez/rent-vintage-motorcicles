@@ -11,19 +11,21 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+    # @offers = Offer.all
+    @offers = policy_scope(Offer)
   end
 
   def show
   end
 
   def new
-    @offer = Offer.new # needed to instantiate the form_for
+    @offer = current_user.offers.new # needed to instantiate the form_for
+    authorize @offer
   end
 
   def create
-    @offer = Offer.new(offer_params)
-    @offer.user = current_user
+    @offer = current_user.offers.new(offer_params)
+    authorize @offer
 
     if @offer.save
       # redirect_to restaurant_path(@restaurant)
@@ -31,8 +33,6 @@ class OffersController < ApplicationController
     else
       render :new
     end
-
-    # no need for app/views/offers/create.html.erb
   end
 
   def edit
@@ -42,7 +42,11 @@ class OffersController < ApplicationController
     @offer.update(offer_params)
 
     # no need for app/views/offers/update.html.erb
-    redirect_to offer_path(@offer)
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -60,5 +64,6 @@ class OffersController < ApplicationController
 
   def set_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 end
