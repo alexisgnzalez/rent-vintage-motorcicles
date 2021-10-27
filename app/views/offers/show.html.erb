@@ -1,16 +1,67 @@
+<div class="container">
+  <div class="row justify-content-around mt-3 mb-3">
+    <%= link_to 'Back', offers_path, class: "btn btn-outline-secondary" %>
+    <%= link_to 'Book', new_offer_booking_path(@offer),class: "btn btn-outline-primary" %>
+    <%= link_to 'Edit', edit_offer_path(@offer), class: "btn btn-outline-success" %>
+    <%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-outline-danger" %>
+  </div>
+  <h1 class="text-center mt-1 mb-1">Your Dream Bike</h1>
 
-<h1>Your Dream Bike</h1>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-<h2>Description</h2>
-<p><%= @offer.description %></p>
+  <div class="container d-flex">
+    <div class="col-4">
+      <div class="card bg-light mb-3 mt-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
+        <div class="card-header text-uppercase font-weight-bold">Description</div>
+        <div class="card-body">
+          <p class="card-text"><%= @offer.description %></p>
+        </div>
+      </div>
+    
+      <div class="card text-white bg-success mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
+        <div class="card-header text-uppercase font-weight-bold">Price</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= @offer.price %></h5>
+        </div>
+      </div>
+    
+      <div class="card text-white bg-info mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
+        <div class="card-header text-uppercase font-weight-bold">Location</div>
+        <div class="card-body">
+          <p class="card-text"><%= @offer.lat %> <%= @offer.long %></p>
+        </div>
+      </div>
 
-<h2>Price</h2>
-<p><%= @offer.price %></p>
+    </div> <!-- info -->
+    <div id="map" class="border border-secondary col-8 mt-3 mb-5 rounded">
+      <!-- Change the token below (https://www.mapbox.com/account/access-tokens/) -->
+      <!-- <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoiam9pYW4iLCJhIjoiY2t1aXFoaXMyMnFldTJxbWFtazEyNWhkMSJ9.CZAdLywF2-1iSKGT3nsspA'> -->
+    </div>
+  </div><!--container -->
 
-<h2>Location</h2>
-<p><%= @offer.lat %> <%= @offer.long %></p>
-
-<%= link_to 'Back', offers_path %>
-<%= link_to 'Book', new_offer_booking_path(@offer) %>
-<%= link_to 'Edit', edit_offer_path(@offer) %>
-<%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" } %>
+</div>
