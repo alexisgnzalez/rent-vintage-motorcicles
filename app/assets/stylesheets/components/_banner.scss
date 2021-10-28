@@ -1,5 +1,5 @@
 .banner {
-    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('img2-banner.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('img2-banner.jpg');
     background-size: cover;
     background-position: center;
     padding: 150px 0;
@@ -23,19 +23,20 @@
   }
   
   .btn-ghost {
-    background-color: white;
-    color: #952caa;
-    border: 1px solid #4A4A4A;
+    background-color: #FD8C3F;
+    color: #ffffff;
     padding: 8px 24px;
     border-radius: 50px;
-    font-weight: lighter;
-    opacity: 0.6;
+    font-weight: bold;
+    opacity: 1;
     transition: opacity .5s ease;
   }
   
   .btn-ghost:hover {
-      color: #952caa;
-    opacity: 1;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #f89c5f;
+    // opacity: 0.8;
   }
 
   @media(max-width: 768px) {
