@@ -1,11 +1,11 @@
 .navbar {
   justify-content: space-between;
-  background: #69DADB;
+  // background: white;
+  background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
   height: 60px;
   display: flex;
   position: sticky;
-  opacity: 0.1px;
-
+  padding-right: 35px;
   .navbar-collapse {
     flex-grow: 0;
     font-family: $source-code;
@@ -21,20 +21,40 @@
     width: 40px;
   }
 
-  .fa-motorcycle {
-    color: #113CFC;
-    font-size: 35px;
-    margin: 0px;
-    width: 30px;
-  }
-
   .fa-smog {
-    color:#113CFC;
-    font-size: 23px;
-    margin: 0px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 23px;
   }
 
-  .nav-item {
-    color:#113CFC;
+  .fa-motorcycle {
+    color:#ffffff;
+    font-size: 30px;
+    // margin-left: 20px;
+  }
+
+  .logo-home {
+    text-decoration: none;
+    &:hover {
+      // text-decoration: none;
+    }
+  }
+
+  .text-color {
+    color: #ffffff !important;
+    font-weight: bold;
+    background-color: #FD8C3F;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+    border-radius: 50px;
+    opacity: 1;
+    transition: opacity .5s ease;
+    &:hover {
+      color: #ffffff;
+      font-weight: bold;
+      background-color: #f89c5f;
+    }
   }
 }
