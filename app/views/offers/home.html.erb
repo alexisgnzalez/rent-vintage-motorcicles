@@ -8,17 +8,23 @@
 
 <div class="container">
     <div class="cards">
+        <%= link_to offers_path(query: "Shopper") do %>
         <div class="one-category mt-5">
-            Shopper
+          Shopper
         </div>
+        <% end %>
+        <%= link_to offers_path(query: "vespa") do %>
         <div class="second-category mt-5">
-            Vespa
+          Vespa
         </div>
+        <% end %>
+        <%= link_to top_path  do %>
         <div class="third-category mt-5">
-            Top 10!!!
+          Top 5
         </div>
+        <% end %>
         <div class="four-category mt-5">
-            Models
+          Models
         </div>
     </div>
 </div>
