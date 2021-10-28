@@ -8,6 +8,13 @@
   padding-right: 35px;
   .navbar-collapse {
     flex-grow: 0;
+    font-family: $source-code;
+
+
+    &:hover {
+      color: grey;
+      border-radius: 29px;
+    }
   }
 
   .navbar-brand img {

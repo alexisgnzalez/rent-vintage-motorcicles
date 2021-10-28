@@ -1,24 +1,32 @@
 <div class="banner">
-    <div class="container">
-      <h1>Looking for a<strong><em>Vintage</em></strong> <strong><em>Adventure?</em></strong></h1>
-      <p>On a beautiful motorcycle</p>
-      <%= link_to "Motorcycles", offers_path, class: "btn btn-ghost" %>
-    </div>
+  <div class="container">
+    <h1>Looking for a<strong><em>Vintage</em></strong> <strong><em>Adventure?</em></strong></h1>
+    <p>On a beautiful motorcycle</p>
+    <%= link_to "Motorcycles", offers_path, class: "btn btn-ghost" %>
+  </div>
 </div>
 
 <div class="container">
-    <div class="home-cards mt-5">
-        <div class="one-category">
-            Shopper
-        </div>
-        <div class="second-category">
-            Vespa
-        </div>
-        <div class="third-category">
-            Top 10
-        </div>
-        <div class="four-category">
-            Models
-        </div>
-    </div>
+  <div class="home-cards mt-5">
+    <%= link_to offers_path(query: "Shopper") do %>
+      <div class="one-category">
+        Shopper
+      </div>
+    <% end %>
+    <%= link_to offers_path(query: "vespa") do %>
+      <div class="second-category">
+        Vespa
+      </div>
+    <% end %>
+    <%= link_to top_path  do %>
+      <div class="third-category">
+        Top 5
+      </div>
+    <% end %>
+    <%= link_to offers_path(query: "vespa") do %>
+      <div class="four-category">
+        Models
+      </div>
+    <% end %>
+  </div>
 </div>

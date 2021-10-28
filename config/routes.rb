@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # Route for garage
   get 'garage', to: 'offers#garage', as: :garage
 
+  # The routes top 10
+  get "offers/top", to: "offers#top", as: :top
+
   # The rest of the routes
   resources :offers do
     resources :bookings, only: %i[new create edit update]

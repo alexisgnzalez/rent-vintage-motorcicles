@@ -1,0 +1,12 @@
+<h1 class="text-center mt-3 font-weight-bold">Top 5</h1>
+  <div class="cards">
+    <% @offers.each do |offer| %>
+      <div class="card mb-3">
+        <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-text"><%= offer.description %></h5>
+          <p class="card-text"><%= link_to "Details", offer_path(offer), class: "btn btn-outline-primary mt-1" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>

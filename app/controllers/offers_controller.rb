@@ -56,6 +56,10 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
+  def top
+    @offers = policy_scope(Offer).order(created_at: :asc).limit(5)
+  end
+
   private
 
   def offer_params
