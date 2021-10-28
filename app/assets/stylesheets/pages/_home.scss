@@ -1,26 +1,28 @@
 // Specific CSS for your home-page
-.cards {
+.home-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
-    .card {
+    .home-cards {
       &:hover {
         -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
         -moz-box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
         box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
-        background-color: rgba(153,153,153,1);
+        // background-color: rgba(153,153,153,1);
+        background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
       }
     }
 }
 
 @media(max-width: 992px) {
-    .cards {
-      grid-template-columns: 1fr 1fr;
-    }
+  .home-cards {
+    grid-template-columns: 1fr 1fr;
   }
- 
-  @media(max-width: 768px) {
-    .cards {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media(max-width: 768px) {
+  .home-cards {
+    grid-template-columns: 1fr;
+    // grid-row: 1;
   }
+}
