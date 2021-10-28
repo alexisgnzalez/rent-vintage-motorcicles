@@ -1,8 +1,6 @@
 .title {
-  color: #113CFC;
-  font-family: $regular;
+  color: #FEA075;
   margin: 20px;
-
 }
 
 .form {
@@ -15,9 +13,68 @@
 
 .form-control.is-valid {
   border-radius: 29px;
-
+  border-color: #FEA075;
 }
 .form-control {
   border-radius: 29px;
-  border-color: #1EDD88;
+  border-color: #FEA075;
 }
+
+
+.btn-up {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #FD8C3F;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity .5s ease;
+  &:hover {
+    color: white;
+    background-color: #f89c5f;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.btn-back {
+    border: 1px solid #CC6496;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    color: #CC6496;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    border-radius: 50px;
+    &:hover {
+        background-color: #CC6496;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid #CC6496;
+    }
+  }
+  .btn-offer {
+   color: #ffffff;
+    font-weight: bold;
+    background-color: #AF8BEB;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    border-radius: 50px;
+    opacity: 1;
+    transition: opacity .5s ease;
+    display: flex;
+    justify-content: center;
+    &:hover {
+        color: white;
+        background-color: #b996f1;
+        font-weight: bold;
+        text-decoration: none;
+    }
+  }

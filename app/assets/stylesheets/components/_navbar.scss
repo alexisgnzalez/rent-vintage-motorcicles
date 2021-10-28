@@ -6,11 +6,9 @@
   display: flex;
   position: sticky;
   padding-right: 35px;
-  .navbar-collapse {
+    .navbar-collapse {
     flex-grow: 0;
     font-family: $source-code;
-
-
     &:hover {
       color: grey;
       border-radius: 29px;
@@ -30,14 +28,10 @@
   .fa-motorcycle {
     color:#ffffff;
     font-size: 30px;
-    // margin-left: 20px;
   }
 
   .logo-home {
     text-decoration: none;
-    &:hover {
-      // text-decoration: none;
-    }
   }
 
   .text-color {
@@ -51,7 +45,7 @@
     border-radius: 50px;
     opacity: 1;
     transition: opacity .5s ease;
-    &:hover {
+      &:hover {
       color: #ffffff;
       font-weight: bold;
       background-color: #f89c5f;
