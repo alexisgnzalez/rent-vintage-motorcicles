@@ -47,14 +47,14 @@
           <p class="card-text"><%= @offer.description %></p>
         </div>
       </div>
-    
+
       <div class="card text-white bg-success mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
         <div class="card-header text-uppercase font-weight-bold">Price</div>
         <div class="card-body">
           <h5 class="card-title"><%= @offer.price %></h5>
         </div>
       </div>
-    
+
       <div class="card text-white bg-info mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
         <div class="card-header text-uppercase font-weight-bold">Location</div>
         <div class="card-body">
@@ -63,9 +63,12 @@
       </div>
 
     </div> <!-- info -->
-    <div id="map" class="border border-secondary col-8 mt-3 mb-5 rounded">
-      <!-- Change the token below (https://www.mapbox.com/account/access-tokens/) -->
-      <!-- <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoiam9pYW4iLCJhIjoiY2t1aXFoaXMyMnFldTJxbWFtazEyNWhkMSJ9.CZAdLywF2-1iSKGT3nsspA'> -->
+    <div id="map"
+         class="border border-secondary col-8 mt-3 mb-5 rounded"
+         data-lat="<%= @offer.lat %>"
+         data-long="<%= @offer.long %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div><!--container -->
+
 </div>

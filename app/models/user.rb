@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :bookings # Want to rent a bike
   # You should add this if you want to use the bike
   # has_many :offers, through: :bookings # Want to rent this bike
-  # validates :first_name, :last_name, presence: true
-  # validates :first_name, :last_name, length: { minimum: 3 }
+  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, length: { minimum: 3 }
 end
