@@ -8,22 +8,22 @@
 
 <div class="container">
   <div class="home-cards mt-5">
-    <%= link_to offers_path(query: "Chopper") do %>
+    <%= link_to offers_path(query: "Chopper"), class: "text-decoration-none" do %>
       <div class="one-category">
         Chopper
       </div>
     <% end %>
-    <%= link_to offers_path(query: "vespa") do %>
+    <%= link_to offers_path(query: "vespa"), class: "text-decoration-none" do %>
       <div class="second-category">
         Vespa
       </div>
     <% end %>
-    <%= link_to top_path  do %>
+    <%= link_to top_path, class: "text-decoration-none" do %>
       <div class="third-category">
         Top 5
       </div>
     <% end %>
-    <%= link_to offers_path(query: "vespa") do %>
+    <%= link_to offers_path(query: "vespa"), class: "text-decoration-none" do %>
       <div class="four-category">
         Models
       </div>

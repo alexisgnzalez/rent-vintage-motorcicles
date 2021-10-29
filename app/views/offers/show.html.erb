@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row justify-content-around mt-3 mb-3">
-    <%= link_to 'Back', offers_path, class: "btn btn-outline-secondary" %>
-    <%= link_to 'Book', new_offer_booking_path(@offer),class: "btn btn-outline-primary" %>
+    <%= link_to 'Back', offers_path, class: "btn-back" %>
+    <%= link_to 'Book', new_offer_booking_path(@offer),class: "btn-book" %>
     <% if policy(@offer).edit? %>
-      <%= link_to 'Edit', edit_offer_path(@offer), class: "btn btn-outline-success" %>
+      <%= link_to 'Edit', edit_offer_path(@offer), class: "btn-edit" %>
     <% end %>
     <% if policy(@offer).destroy?%>
-      <%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-outline-danger" %>
+      <%= link_to 'Remove', offer_path(@offer), method: :delete, data: { confirm: "Are you sure" }, class: "btn-remove" %>
     <% end %>
   </div>
 
@@ -19,15 +19,29 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
+      <% if @offer.photos.empty? %>
+        <div class="carousel-item active">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+      <% else %>
+        <% @offer.photos.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            </div>
+          <% else %>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,21 +55,21 @@
 
   <div class="d-flex">
     <div class="col-4 p-0">
-      <div class="card bg-light mb-3 mt-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
+      <div class="mt-3 p-3 mb-5 rounded tex-descr" style="max-width: 18rem;">
         <div class="card-header text-uppercase font-weight-bold">Description</div>
         <div class="card-body">
           <p class="card-text"><%= @offer.description %></p>
         </div>
       </div>
 
-      <div class="card text-white bg-success mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
+      <div class="mt-3 p-3 mb-5 rounded tex-price" style="max-width: 18rem;">
         <div class="card-header text-uppercase font-weight-bold">Price</div>
         <div class="card-body">
           <h5 class="card-title"><%= @offer.price %></h5>
         </div>
       </div>
 
-      <div class="card text-white bg-info mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 18rem;">
+      <div class="mt-3 p-3 mb-5 rounded tex-loca" style="max-width: 18rem;">
         <div class="card-header text-uppercase font-weight-bold">Location</div>
         <div class="card-body">
           <p class="card-text"><%= @offer.lat %> <%= @offer.long %></p>
@@ -64,7 +78,7 @@
 
     </div> <!-- info -->
     <div id="map"
-         class="border border-secondary col-8 mt-3 mb-5 rounded"
+         class="shadow-map col-8 mt-3 mb-5 rounded"
          data-lat="<%= @offer.lat %>"
          data-long="<%= @offer.long %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">

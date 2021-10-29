@@ -1,16 +1,20 @@
 <div class="container ">
-  <div class="row justify-content-around mt-3">
-    <%= link_to 'Back', root_path, class: "btn btn-outline-secondary" %>
-      <%= link_to 'New Motorcycle', new_offer_path, class: "btn btn-outline-success" %>
+  <div class="row justify-content-around mt-4">
+    <%= link_to '     Back     ', root_path, class: "btn-back" %>
+    <%= link_to 'New Motorcycle', new_offer_path, class: "btn-new" %>
   </div>
 
   <h1 class="text-center mt-3 font-weight-bold tex-color">Available Motorcicles</h1>
-  
+
   <div class="cards">
     <% @offers.each do |offer| %>
       <%= link_to offer_path(offer), class: "text-decoration-none" do %>
         <div class="card mb-3 index-cards">
-          <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <% if offer.photos.empty? %>
+            <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <% else %>
+            <%= cl_image_tag offer.photos[0].key, class: "card-img-top" %>
+          <% end %>
           <div class="card-body">
             <h5 class="card-text text-center font-weight-bold tex-info"><%= offer.description %></h5>
           </div>

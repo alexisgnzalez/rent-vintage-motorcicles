@@ -7,6 +7,7 @@
           <%= f.input :price %>
           <%= f.input :lat %>
           <%= f.input :long %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <div class= "row justify-content-around mt-5">
             <%= f.button :submit, class: "btn-up  rounded-pill" %>
             <%= link_to 'Back', offers_path, class: "btn-back rounded-pill" %>
