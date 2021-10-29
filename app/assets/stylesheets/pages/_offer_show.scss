@@ -125,3 +125,16 @@
         box-shadow: 0px 0px 6px 1px rgba(204,100,150,0.5);
     }
 }
+
+.shadow-slider {
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(204,100,150,0.5);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(204,100,150,0.5);
+    box-shadow: 0px 0px 6px 1px rgba(204,100,150,0.5);
+    transition: .6s;
+    &:hover {
+        -webkit-box-shadow: 0px 0px 6px 1px rgba(204,100,150,1);
+        -moz-box-shadow: 0px 0px 6px 1px rgba(204,100,150,1);
+        box-shadow: 0px 0px 6px 1px rgba(204,100,150,1);
+        // opacity: .9;
+    }
+}
