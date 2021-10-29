@@ -1,6 +1,4 @@
 .footer {
-  // background: #fafaf9;
-  // background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
   background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
   align-items: center;
   height: 70px;
@@ -9,7 +7,6 @@
   text-align: center;
   position: absolute;
   bottom: 0px;
-  font-weight: 600;
 }
 .footer-links {
   margin-top: 5px;
@@ -18,7 +15,6 @@
   justify-content: center;
 }
 .footer-links a {
-  // color: rgb(8, 8, 8);
   opacity: 1;
   text-decoration: none;
   font-size: 24px;

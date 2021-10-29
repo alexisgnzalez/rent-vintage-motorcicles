@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-6 bg-white form">
-      <h2 class="row justify-content-center pt-1 title">Sign up</h2>
+      <h2 class="row justify-content-center pt-1 title font-weight-bold tex-color">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -26,10 +26,11 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo, as: :file %>
         </div>
 
-        <div class="form-actions ">
-          <%= f.button :submit, "Sign up", class: "btn btn-outline-success rounded-pill" %>
+        <div class="form-actions row justify-content-around mt-5 ml-5">
+          <%= f.button :submit, "Sign up", class: "btn-up rounded-pill" %>
           <%= render "devise/shared/links" %>
         </div>
       <% end %>

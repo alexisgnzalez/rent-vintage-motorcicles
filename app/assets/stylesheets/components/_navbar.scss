@@ -1,15 +1,16 @@
 .navbar {
   justify-content: space-between;
-  background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
   height: 60px;
   display: flex;
   position: sticky;
   padding-right: 35px;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
     .navbar-collapse {
     flex-grow: 0;
     font-family: $source-code;
     &:hover {
-      color: grey;
+      color: rgb(255, 254, 254);
       border-radius: 29px;
     }
   }
@@ -49,5 +50,20 @@
       font-weight: bold;
       background-color: #f89c5f;
     }
+  }
+
+}
+
+.navbar-color{
+  background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
+}
+
+.btn-drop {
+  // background-color: #ffffff;
+  color:#FD8C3F;
+  font-weight: bold;
+  &:hover {
+    background-color: #f8be88;
+    border-radius: 3px;
   }
 }

@@ -12,7 +12,11 @@ class OffersController < ApplicationController
 
   def index
     # @offers = Offer.all
-    @offers = policy_scope(Offer)
+    if params[:query].present?
+      @offers = Offer.search_by_description(params[:query])
+    else
+      @offers = policy_scope(Offer)
+    end
   end
 
   def show

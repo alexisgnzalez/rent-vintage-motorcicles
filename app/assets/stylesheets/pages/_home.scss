@@ -3,13 +3,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
-    .home-cards {
+    .shadow-purple {
+      -webkit-box-shadow: 0px 0px 6px 1px rgba(74,4,74,0.2);
+      -moz-box-shadow: 0px 0px 6px 1px rgba(74,4,74,0.2);
+      box-shadow: 0px 0px 6px 1px rgba(74,4,74,0.2);
+      transition: .5s ease-in-out;
       &:hover {
         -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
         -moz-box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
         box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);
         // background-color: rgba(153,153,153,1);
-        background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
+        // background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
       }
     }
 }
