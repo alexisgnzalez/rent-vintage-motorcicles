@@ -8,8 +8,10 @@
           <%= f.input :lat %>
           <%= f.input :long %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :submit, class: "btn btn-outline-success rounded-pill" %>
-          <%= link_to 'Back', offers_path, class: "btn btn-outline-secondary ml-20 rounded-pill" %>
+          <div class= "row justify-content-around mt-5">
+            <%= f.button :submit, class: "btn-up  rounded-pill" %>
+            <%= link_to 'Back', offers_path, class: "btn-back rounded-pill" %>
+          </div>
       <% end %>
     </div>
   </div>
