@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :offers # Owner of a bike
+  has_one_attached :photo
   # Tomorrow morning you should ask a question about all this
   # You should add this if you want to rent your bike
   has_many :bookings # Want to rent a bike
