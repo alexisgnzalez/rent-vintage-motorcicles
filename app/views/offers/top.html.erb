@@ -1,16 +1,25 @@
-<h1 class="text-center mt-3 font-weight-bold">Top 5</h1>
+<div class="container ">
+  <div class="row justify-content-around mt-4">
+    <%= link_to 'Back', root_path, class: "btn-back" %>
+    <!-- <%= link_to 'New Motorcycle', new_offer_path, class: "btn-new" %> -->
+  </div>
+
+  <h1 class="text-center mt-3 font-weight-bold tex-color">Top 5</h1>
+
   <div class="cards">
     <% @offers.each do |offer| %>
-      <div class="card mb-3">
-        <% if offer.photos.empty? %>
+      <%= link_to offer_path(offer), class: "text-decoration-none" do %>
+        <div class="card mb-3 index-cards">
+          <% if offer.photos.empty? %>
             <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
           <% else %>
             <%= cl_image_tag offer.photos[0].key, class: "card-img-top" %>
           <% end %>
-        <div class="card-body">
-          <h5 class="card-text"><%= offer.description %></h5>
-          <p class="card-text"><%= link_to "Details", offer_path(offer), class: "btn btn-outline-primary mt-1" %></p>
+          <div class="card-body">
+            <h5 class="card-text text-center font-weight-bold tex-info"><%= offer.description %></h5>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %> <!-- link_to etails -->
+    <% end %> <!-- @ffers.each -->
   </div>
+</div>
