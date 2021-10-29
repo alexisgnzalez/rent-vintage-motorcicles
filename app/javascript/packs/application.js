@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 // import { loadDynamicBannerText } from '../components/banner';
 
 // Internal imports, e.g:
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // loadDynamicBannerText();
   initMapbox();
+  initUpdateNavbarOnScroll();
 });

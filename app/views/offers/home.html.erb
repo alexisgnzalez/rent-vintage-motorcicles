@@ -1,13 +1,14 @@
-<div class="banner">
-  <div class="container">
-    <h1>Looking for a<strong><em>Vintage</em></strong> <strong><em>Adventure?</em></strong></h1>
-    <p>On a beautiful motorcycle</p>
-    <%= link_to "Motorcycles", offers_path, class: "btn btn-ghost" %>
+<div style="position: relative">
+  <div class="banner">
+    <div class="container">
+      <h1>Looking for a<strong><em>Vintage</em></strong> <strong><em>Adventure?</em></strong></h1>
+      <p>On a beautiful motorcycle</p>
+      <%= link_to "Motorcycles", offers_path, class: "btn btn-ghost" %>
+    </div>
   </div>
 </div>
-
 <div class="container">
-  <div class="home-cards mt-5">
+  <div class="home-cards">
     <%= link_to offers_path(query: "Chopper"), class: "text-decoration-none" do %>
       <div class="one-category">
         Chopper
@@ -21,6 +22,16 @@
     <%= link_to top_path, class: "text-decoration-none" do %>
       <div class="third-category">
         Top 5
+      </div>
+    <% end %>
+    <%= link_to offers_path(query: "vespa"), class: "text-decoration-none" do %>
+      <div class="four-category">
+        Models
+      </div>
+    <% end %>
+    <%= link_to offers_path(query: "vespa"), class: "text-decoration-none" do %>
+      <div class="four-category">
+        Models
       </div>
     <% end %>
     <%= link_to offers_path(query: "vespa"), class: "text-decoration-none" do %>
