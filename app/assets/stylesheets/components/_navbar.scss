@@ -5,7 +5,7 @@
   display: flex;
   position: sticky;
   padding-right: 35px;
-  .navbar-collapse {
+    .navbar-collapse {
     flex-grow: 0;
     font-family: $source-code;
     &:hover {
@@ -44,7 +44,7 @@
     border-radius: 50px;
     opacity: 1;
     transition: opacity .5s ease;
-    &:hover {
+      &:hover {
       color: #ffffff;
       font-weight: bold;
       background-color: #f89c5f;
