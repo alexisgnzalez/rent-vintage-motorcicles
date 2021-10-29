@@ -1,6 +1,5 @@
 .navbar {
   justify-content: space-between;
-  // background: white;
   background-image: linear-gradient(to right, #FD8C3F, #EE6E3F, #D65F55, #DB4A63, #D34F76, #CD6493, #C165AB, #C26DAD, #AC90F6);
   height: 60px;
   display: flex;
@@ -9,8 +8,6 @@
   .navbar-collapse {
     flex-grow: 0;
     font-family: $source-code;
-
-
     &:hover {
       color: grey;
       border-radius: 29px;
@@ -30,14 +27,10 @@
   .fa-motorcycle {
     color:#ffffff;
     font-size: 30px;
-    // margin-left: 20px;
   }
 
   .logo-home {
     text-decoration: none;
-    &:hover {
-      // text-decoration: none;
-    }
   }
 
   .text-color {
