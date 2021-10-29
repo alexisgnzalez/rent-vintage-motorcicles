@@ -8,6 +8,7 @@
 
   <h1 class="text-center mt-3 font-weight-bold tex-color">My Motorcicles</h1>
 
+
   <div class="cards">
     <% if @garage.empty? %>
       <h3>Looks like you don't any motorcycles buddy!</h3>
@@ -15,7 +16,11 @@
       <% @garage.each do |motorcycle| %>
         <%= link_to offer_path(motorcycle), class: "text-decoration-none" do %>
         <div class="card mb-3 index-cards">
-          <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <% if motorcycle.photos.empty? %>
+            <%= image_tag "category-chopper.jpg", class: "card-img-top" %>
+          <% else %>
+            <%= cl_image_tag motorcycle.photos[0].key, class: "card-img-top" %>
+          <% end %>
           <div class="card-body">
             <h5 class="card-text text-center font-weight-bold tex-info"><%= motorcycle.description %></h5>
           </div>

@@ -19,15 +19,29 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
-      </div>
+      <% if @offer.photos.empty? %>
+        <div class="carousel-item active">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "category-chopper.jpg", class: "d-block w-100" %>
+        </div>
+      <% else %>
+        <% @offer.photos.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            </div>
+          <% else %>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

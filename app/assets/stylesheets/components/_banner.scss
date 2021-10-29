@@ -1,11 +1,11 @@
 .banner {
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('img2-banner.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://res.cloudinary.com/alexisgonzalez/image/upload/v1635453937/Rent%20Vintage%20Motorcycles/img2-banner_kzvcwr.jpg');
     background-size: cover;
     background-position: center;
     padding: 150px 0;
     text-align: center;
 }
-  
+
   .banner h1 {
     margin: 0;
     color: white;
@@ -13,7 +13,7 @@
     font-size: 32px;
     font-weight: bold;
   }
-  
+
   .banner p {
     text-align: center;
     font-size: 20px;
@@ -21,7 +21,7 @@
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
-  
+
   .btn-ghost {
     background-color: #FD8C3F;
     color: #ffffff;
@@ -31,7 +31,7 @@
     opacity: 1;
     transition: opacity .5s ease;
   }
-  
+
   .btn-ghost:hover {
     color: #ffffff;
     font-weight: bold;
@@ -44,4 +44,3 @@
       padding: 12px 80px;
     }
   }
-  
