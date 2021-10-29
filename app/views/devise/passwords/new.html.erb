@@ -11,11 +11,10 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
         </div>
-
-        <div class="form-actions row justify-content-around ">
-          <%= f.button :submit, "Send me reset password instructions", class: "btn-offer rounded-pill" %>
+        <div class="form-actions d-flex justify-content-between mt-3">
+          <%= f.button :submit, "Reset password", class: "btn-up rounded-pill", style:"margin-left: 27px;" %>
+          <%= render "devise/shared/links" %>
         </div>
-        <%= render "devise/shared/links" %>
       <% end %>
     </div>
   </div>

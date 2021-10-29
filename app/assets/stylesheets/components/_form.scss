@@ -41,6 +41,8 @@
   border-radius: 50px;
   opacity: 1;
   transition: opacity .5s ease;
+  margin-left: 0px;
+  margin-right: 0px;
   &:hover {
     color: white;
     background-color: #f89c5f;
@@ -59,12 +61,14 @@
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   border-radius: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
   &:hover {
-      background-color: #CC6496;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid #CC6496;
+    background-color: #CC6496;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #CC6496;
   }
 }
 
