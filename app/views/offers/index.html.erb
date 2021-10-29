@@ -1,10 +1,25 @@
 <div class="container ">
   <div class="row justify-content-around mt-4">
+    <%= form_tag offers_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Motorcycle"
+      %>
+      <%= submit_tag "Search", class: "btn-back" %>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-around mt-4">
     <%= link_to '     Back     ', root_path, class: "btn-back" %>
     <%= link_to 'New Motorcycle', new_offer_path, class: "btn-new" %>
   </div>
 
   <h1 class="text-center mt-3 font-weight-bold tex-color">Available Motorcicles</h1>
+
+  <% if @offers.empty? %>
+    <h1 class="row justify-content-around">Looks like we didn't find your Motorcycle mate, sorry 😥</h1>
+  <% end %>
 
   <div class="cards">
     <% @offers.each do |offer| %>
